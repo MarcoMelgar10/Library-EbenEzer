@@ -12,6 +12,6 @@ public class VisualizarUsuario {
     private final UsuarioDAO usuarioDAO = new UsuarioDAO();
     public VisualizarUsuario(ModeloUsuarios modelo){
         Usuario usuario = usuarioDAO.obtener(modelo.getUsuarioSeleccionado().getID());
-        VIsualizarUsuarioVentana vIsualizarUsuarioVentana = new VIsualizarUsuarioVentana(usuario);
+        VisualizarUsuarioVentana vIsualizarUsuarioVentana = new VisualizarUsuarioVentana(usuario);
     }
 }

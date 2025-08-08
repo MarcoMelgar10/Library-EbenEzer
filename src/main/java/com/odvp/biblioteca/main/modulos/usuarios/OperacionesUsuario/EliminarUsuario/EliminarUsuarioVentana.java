@@ -34,7 +34,7 @@ public class EliminarUsuarioVentana extends Stage {
 
 
     public EliminarUsuarioVentana(int usuarioId, UsuarioDAO usuarioDAO) {
-        setTitle("Eliminar Usuario");
+        setTitle("Eliminar");
         this.usuarioDAO = usuarioDAO;
         this.ID = usuarioId;
         String administrador = SesionAdministrador.getAdministradorActivo();

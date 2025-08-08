@@ -34,7 +34,7 @@ public class CancelarMultaVentana extends Stage {
     }
 
     private void buildStage() {
-        setTitle("Confirmar Cancelación");
+        setTitle("Cancelacion");
         initModality(Modality.APPLICATION_MODAL);
         Image icon = new Image(ServicioIconos.OPCION_MODULO_MULTAS);
         this.getIcons().add(icon);

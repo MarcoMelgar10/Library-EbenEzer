@@ -34,7 +34,7 @@ public class VisualizarReservaVentana extends Stage {
         this.usuarioDAO = new UsuarioDAO();
         this.libroDAO = new LibroDAO();
 
-        setTitle("Detalles de Reserva");
+        setTitle("Visualizar");
         Scene scene = buildScene();
         setScene(scene);
         centerOnScreen();
@@ -52,7 +52,7 @@ public class VisualizarReservaVentana extends Stage {
         Image icon = new Image(ServicioIconos.OPCION_MODULO_RESERVAS);
         this.getIcons().add(icon);
 
-        Label titleWindow = new Label("Detalles de Reserva");
+        Label titleWindow = new Label("Visualizar Reserva");
         titleWindow.setStyle("-fx-font-size: 22px; -fx-font-weight: bold;");
         StackPane titleContainer = new StackPane(titleWindow);
         titleContainer.setPrefHeight(40);

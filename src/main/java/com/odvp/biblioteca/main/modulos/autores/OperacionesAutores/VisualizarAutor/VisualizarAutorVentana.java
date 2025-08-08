@@ -25,7 +25,7 @@ public class VisualizarAutorVentana extends Stage {
 
     public VisualizarAutorVentana(Autor autor) {
         this.autor = autor;
-        setTitle("Visualizar Autor");
+        setTitle("Visualizar");
         Scene scene = buildScene();
         initValues();
         setScene(scene);

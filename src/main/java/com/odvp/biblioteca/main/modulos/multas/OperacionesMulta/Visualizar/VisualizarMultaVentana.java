@@ -24,7 +24,7 @@ public class VisualizarMultaVentana extends Stage {
 
     public VisualizarMultaVentana(Multa multa) {
         this.multa = multa;
-        setTitle("Visualizar Multa");
+        setTitle("Visualizar");
         Scene scene = buildScene();
         Image icon = new Image(ServicioIconos.OPCION_MODULO_MULTAS);
         this.getIcons().add(icon);
@@ -41,7 +41,7 @@ public class VisualizarMultaVentana extends Stage {
         root.setPadding(new Insets(20));
 
         // Título
-        Label titleWindow = new Label("Detalle de Multa");
+        Label titleWindow = new Label("Visualizar de Multa");
         titleWindow.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
         StackPane titleContainer = new StackPane(titleWindow);
         titleContainer.setPrefHeight(40);

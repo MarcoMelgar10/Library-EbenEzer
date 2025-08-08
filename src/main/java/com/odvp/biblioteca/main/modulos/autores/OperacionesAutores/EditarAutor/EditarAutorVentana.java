@@ -31,7 +31,7 @@ public class EditarAutorVentana extends Stage {
     public EditarAutorVentana(AutorDAO autorDAO, Autor autor) {
         this.autor = autor;
         this.DAO = autorDAO;
-        setTitle("Editar Autor");
+        setTitle("Editar");
         Scene scene = buildScene();
         initValues();
         setScene(scene);

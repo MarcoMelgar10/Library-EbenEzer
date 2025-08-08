@@ -31,7 +31,7 @@ public class EliminarPrestamoVentana extends Stage {
         setTitle("Confirmar Eliminación de Préstamo");
         VBox root = createMainLayout();
         Scene scene = new Scene(root);
-
+        setTitle("Eliminar");
         setScene(scene);
         centerOnScreen();
         initModality(Modality.APPLICATION_MODAL);

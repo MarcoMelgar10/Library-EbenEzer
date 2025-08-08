@@ -25,7 +25,7 @@ public class AgregarUsuarioVentana extends Stage {
 
     public AgregarUsuarioVentana(UsuarioDAO usuarioDAO) {
         this.DAO = usuarioDAO;
-        setTitle("Agregar Usuario");
+        setTitle("Agregar");
         Scene scene = buildScene();
         setScene(scene);
         centerOnScreen();

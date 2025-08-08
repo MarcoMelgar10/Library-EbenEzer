@@ -31,7 +31,7 @@ public class DevolverLibroVentana extends Stage {
     }
 
     private void buildStage() {
-        setTitle("Devolver libro");
+        setTitle("Devolucion");
         VBox root = createMainLayout();
         setScene(new Scene(root));
         showAndWait();

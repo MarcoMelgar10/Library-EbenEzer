@@ -33,7 +33,7 @@ public class EliminarAutorVentana extends Stage {
     private AdministradorDAO administradorDAO = new AdministradorDAO();
 
     public EliminarAutorVentana(int usuarioId, AutorDAO autorDAO) {
-        setTitle("Eliminar Autor");
+        setTitle("Eliminar");
         this.autorDAO = autorDAO;
         this.ID = usuarioId;
         String administrador = SesionAdministrador.getAdministradorActivo();

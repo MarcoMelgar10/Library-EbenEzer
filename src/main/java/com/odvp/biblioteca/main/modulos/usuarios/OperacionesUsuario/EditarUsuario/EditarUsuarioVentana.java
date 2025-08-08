@@ -32,7 +32,7 @@ public class EditarUsuarioVentana extends Stage {
     public EditarUsuarioVentana(UsuarioDAO usuarioDAO, Usuario usuario) {
         this.usuario = usuario;
         this.DAO = usuarioDAO;
-        setTitle("Modificar Usuario");
+        setTitle("Modificar");
         Scene scene = buildScene();
         initValues();
         setScene(scene);

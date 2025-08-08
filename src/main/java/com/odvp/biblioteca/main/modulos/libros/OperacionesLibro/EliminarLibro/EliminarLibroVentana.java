@@ -29,7 +29,7 @@ public class EliminarLibroVentana extends Stage {
     private AdministradorDAO administradorDAO = new AdministradorDAO();
 
     public EliminarLibroVentana(int libroId, LibroDAO libroDAO) {
-        setTitle("Eliminar Libro");
+        setTitle("Eliminar");
         this.libroDAO = libroDAO;
         this.ID = libroId;
         String administrador = SesionAdministrador.getAdministradorActivo();

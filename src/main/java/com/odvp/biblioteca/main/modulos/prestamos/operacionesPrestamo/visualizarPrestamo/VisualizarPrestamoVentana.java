@@ -30,6 +30,7 @@ public class VisualizarPrestamoVentana extends Stage {
     this.libroDAO =libroDAO;
     this.usuarioDAO = usuarioDAO;
     Scene scene = buildEscene();
+    setTitle("Visualizar");
     setScene(scene);
     centerOnScreen();
     initModality(Modality.APPLICATION_MODAL);
@@ -46,7 +47,7 @@ public class VisualizarPrestamoVentana extends Stage {
         Image icon = new Image(ServicioIconos.OPCION_MODULO_PRESTAMOS);
         this.getIcons().add(icon);
 
-        Label titleWindow = new Label("Detalle de Multa");
+        Label titleWindow = new Label("Visualizar Prestamo");
         titleWindow.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
         StackPane titleContainer = new StackPane(titleWindow);
         titleContainer.setPrefHeight(40);

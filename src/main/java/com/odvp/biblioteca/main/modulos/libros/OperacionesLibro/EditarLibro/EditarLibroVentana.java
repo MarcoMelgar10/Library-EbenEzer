@@ -59,7 +59,7 @@ public class EditarLibroVentana extends Stage {
         this.libroDAO = libroDAO;
         this.subCategoriaDAO = subCategoriaDAO;
         this.libroInicial = libroInicial;
-        setTitle("Editar libro");
+        setTitle("Editar");
         Scene scene = buildScene();
         initValues();
         setScene(scene);

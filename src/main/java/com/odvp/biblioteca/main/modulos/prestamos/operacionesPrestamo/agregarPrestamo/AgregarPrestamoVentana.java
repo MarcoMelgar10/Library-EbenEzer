@@ -28,7 +28,7 @@ public class AgregarPrestamoVentana extends Stage {
     private final UsuarioDAO usuarioDAO;
     private final LibroDAO libroDAO;
     private final PrestamoDAO prestamoDAO;
-    private TextField idLibroField, idUsuarioField;
+    private Spinner<Integer> idLibroSpinner, idUsuarioSpinner;
     private Label idLabel, fechaPrestamoLabel, fechaDevolucionLabel, tituloLibroLabel, nombreUsuarioLabel, estado;
     private Button guardarButton, cancelarButton;
     private final HashMap<String, Integer> usuarios = new LinkedHashMap<>();
@@ -63,7 +63,6 @@ public class AgregarPrestamoVentana extends Stage {
 
         Separator separator = new Separator();
 
-
         GridPane grid = new GridPane();
         grid.setHgap(10);
         grid.setVgap(10);
@@ -76,25 +75,32 @@ public class AgregarPrestamoVentana extends Stage {
         nombreUsuarioLabel = new Label("(Ingrese carnet de usuario)");
         estado = new Label("activo");
 
-        idLibroField = new TextField();
-        idLibroField.setPromptText("Código del libro");
-        idUsuarioField = new TextField();
-        idUsuarioField.setPromptText("Código del usuario");
+        // Spinners editables
+        idLibroSpinner = new Spinner<>(1, Integer.MAX_VALUE, 1);
+        idLibroSpinner.setEditable(true);
+        idUsuarioSpinner = new Spinner<>(1, Integer.MAX_VALUE, 1);
+        idUsuarioSpinner.setEditable(true);
 
-        // Listeners optimizados
-        idLibroField.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.isEmpty()) {
-                updateLibroInfo(newValue);
-            } else {
-                tituloLibroLabel.setText("(Ingrese código de libro)");
+        // Listener solo cuando pierde el foco
+        idLibroSpinner.focusedProperty().addListener((obs, oldVal, newVal) -> {
+            if (!newVal) { // perdió el foco
+                String valor = idLibroSpinner.getEditor().getText();
+                if (!valor.isEmpty()) {
+                    updateLibroInfo(valor);
+                } else {
+                    tituloLibroLabel.setText("(Ingrese código de libro)");
+                }
             }
         });
 
-        idUsuarioField.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.isEmpty()) {
-                updateUsuarioInfo(newValue);
-            } else {
-                nombreUsuarioLabel.setText("(Ingrese carnet de usuario)");
+        idUsuarioSpinner.focusedProperty().addListener((obs, oldVal, newVal) -> {
+            if (!newVal) {
+                String valor = idUsuarioSpinner.getEditor().getText();
+                if (!valor.isEmpty()) {
+                    updateUsuarioInfo(valor);
+                } else {
+                    nombreUsuarioLabel.setText("(Ingrese carnet de usuario)");
+                }
             }
         });
 
@@ -102,9 +108,9 @@ public class AgregarPrestamoVentana extends Stage {
         grid.addRow(0, new Label("Codigo:"), idLabel);
         grid.addRow(1, new Label("Fecha préstamo:"), fechaPrestamoLabel);
         grid.addRow(2, new Label("Fecha devolución:"), fechaDevolucionLabel);
-        grid.addRow(3, new Label("Código libro:"), idLibroField);
+        grid.addRow(3, new Label("Código libro:"), idLibroSpinner);
         grid.addRow(4, new Label("Título libro:"), tituloLibroLabel);
-        grid.addRow(5, new Label("Código usuario:"), idUsuarioField);
+        grid.addRow(5, new Label("Código usuario:"), idUsuarioSpinner);
         grid.addRow(6, new Label("Nombre usuario:"), nombreUsuarioLabel);
         grid.addRow(7, new Label("Estado:"), estado);
 
@@ -186,8 +192,8 @@ public class AgregarPrestamoVentana extends Stage {
 
     private boolean validar() {
         try {
-            int idUsuario = Integer.parseInt(idUsuarioField.getText());
-            int idLibro = Integer.parseInt(idLibroField.getText());
+            int idUsuario = Integer.parseInt(idUsuarioSpinner.getEditor().getText());
+            int idLibro = Integer.parseInt(idLibroSpinner.getEditor().getText());
             return usuarios.containsValue(idUsuario) && libros.containsValue(idLibro);
         } catch (NumberFormatException e) {
             return false;
@@ -196,8 +202,8 @@ public class AgregarPrestamoVentana extends Stage {
 
     private void guardarPrestamo() {
         try {
-            int idLibro = Integer.parseInt(idLibroField.getText());
-            int idUsuario = Integer.parseInt(idUsuarioField.getText());
+            int idLibro = Integer.parseInt(idLibroSpinner.getEditor().getText());
+            int idUsuario = Integer.parseInt(idUsuarioSpinner.getEditor().getText());
 
             Prestamo nuevoPrestamo = new Prestamo(
                     Integer.parseInt(idLabel.getText()),

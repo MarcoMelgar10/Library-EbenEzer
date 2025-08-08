@@ -54,7 +54,7 @@ public class AgregarLibroVentana extends Stage {
         this.categoriaDAO = categoriaDAO;
         this.libroDAO = libroDAO;
         this.subCategoriaDAO = subCategoriaDAO;
-        setTitle("Agregar libro");
+        setTitle("Agregar");
         Scene scene = buildScene();
         initValues();
         setScene(scene);

@@ -30,7 +30,7 @@ public class AgregarAutorVentana extends Stage {
 
     public AgregarAutorVentana(AutorDAO autorDAO) {
         this.DAO = autorDAO;
-        setTitle("Agregar Autor");
+        setTitle("Agregar");
         Scene scene = buildScene();
         setScene(scene);
         centerOnScreen();

@@ -39,7 +39,7 @@ public class AgregarMultaVentana extends Stage {
     public AgregarMultaVentana(MultaDAO multaDAO) {
         this.multaDao = multaDAO;
         prestamoDAO = new PrestamoDAO();
-        setTitle("Agregar multa");
+        setTitle("Agregar");
         Scene scene = buildScene();
         Image icon = new Image(ServicioIconos.OPCION_MODULO_MULTAS);
         this.getIcons().add(icon);

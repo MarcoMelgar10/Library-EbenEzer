@@ -47,7 +47,7 @@ public class EditarReservaVentana extends Stage {
     public EditarReservaVentana(ReservaDAO reservaDAO, Reserva reserva) {
         this.reservaDAO = reservaDAO;
         this.reserva = reserva;
-        setTitle("Editar Reserva");
+        setTitle("Editar");
         Scene scene = buildScene();
         setScene(scene);
         centerOnScreen();

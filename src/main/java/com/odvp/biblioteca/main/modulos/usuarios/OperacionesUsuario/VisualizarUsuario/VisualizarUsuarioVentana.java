@@ -14,16 +14,16 @@ import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class VIsualizarUsuarioVentana extends Stage {
+public class VisualizarUsuarioVentana extends Stage {
 
     private Label nombreField, apellidoPaternoField, apellidoMaternoField, telefonoField, direccionField, idField;
     private Button aceptarButton;
     private Usuario usuario;
     private boolean hubieronCambios = false;
 
-    public VIsualizarUsuarioVentana(Usuario usuario) {
+    public VisualizarUsuarioVentana(Usuario usuario) {
         this.usuario = usuario;
-        setTitle("Modificar Usuario");
+        setTitle("Visializar");
         Scene scene = buildScene();
         initValues();
         setScene(scene);

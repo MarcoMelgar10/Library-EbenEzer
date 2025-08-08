@@ -38,6 +38,7 @@ public class EditarPrestamoVentana extends Stage {
         this.libroDAO = libroDAO;
         this.usuarioDAO = usuarioDAO;
         Scene scene = buildEscene();
+        setTitle("Editar");
         setScene(scene);
         centerOnScreen();
         initModality(Modality.APPLICATION_MODAL);
@@ -62,7 +63,7 @@ public class EditarPrestamoVentana extends Stage {
         this.getIcons().add(icon);
 
         // Título
-        Label titleWindow = new Label("Detalle de Préstamo");
+        Label titleWindow = new Label("Visualizar de Préstamo");
         titleWindow.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
         StackPane titleContainer = new StackPane(titleWindow);
         titleContainer.setPrefHeight(40);

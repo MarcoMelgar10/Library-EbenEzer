@@ -121,7 +121,7 @@ public class LoginScene extends VBox{
         }else {
             if(administradorDAO.comprobarContrasena(userField.getText(), passwordField.getText())) {
                 SesionAdministrador.setAdministradorActivo(userField.getText());
-                String mensajeInfo = "Ingreso el administrador: " + userField.getText();
+                String mensajeInfo = "Intento ingresar el usuario: " + userField.getText();
                 log.info(mensajeInfo);
                 Log logEntrada = new Log("ERROR", mensajeInfo, new java.sql.Date(System.currentTimeMillis()));
                 logDAO.insertar(logEntrada);

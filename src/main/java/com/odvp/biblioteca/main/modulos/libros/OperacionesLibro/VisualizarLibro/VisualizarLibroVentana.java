@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 public class VisualizarLibroVentana extends Stage {
     public VisualizarLibroVentana(Libro libro) {
 
-        setTitle("Visualizar Libro");
+        setTitle("Visualizar");
 
         VBox root = new VBox(10);
         root.setAlignment(Pos.TOP_CENTER);

@@ -48,7 +48,7 @@ public class AgregarReservaVentana extends Stage {
         this.reservaDAO = reservaDAO;
         this.usuarioDAO = usuarioDAO;
         this.libroDAO = libroDAO;
-        setTitle("Reservar libro");
+        setTitle("Agregar");
         Scene scene = buildScene();
         initValues();
         setScene(scene);
